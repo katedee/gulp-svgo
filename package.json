@@ -27,6 +27,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "svgo": "^0.6.6"
+    "svgo": "git://github.com/strarsis/svgo#inlineStyles"
   }
 }
