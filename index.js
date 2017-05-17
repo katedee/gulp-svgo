@@ -23,11 +23,12 @@ module.exports = function(options) {
         }
 
         if (file.isBuffer()) {
-            svgo.optimize(file.contents.toString('utf8'), function(result) {
-                file.contents = new Buffer(result.data);
-                flow.push(file);
-                return next();
-            });
+            svgo.optimize(file.contents.toString('utf8'))
+                .then(function(result) {
+                    file.contents = new Buffer(result.data);
+                    flow.push(file);
+                    return next();
+                });
         }
     };
 
